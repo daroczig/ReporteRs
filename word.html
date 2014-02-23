@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Word documents</title>
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"
+	media="all" />
+<link rel="stylesheet" href="css/html4r.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/highlight.css" type="text/css"
+	media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-3" id="navbar-div">
+				<div class="navbar-fixed-topleft nav nav-list bs-sidebar"
+					role="navigation">
+					<ul class="nav nav-list">
+						<li><a href="#UIDZlbWOtJvNY">Getting Started</a></li>
+						<li><a href="#UIDVc7Ij0hWCc">Function list</a></li>
+						<li><a href="#UIDVCTEN9a3Am">Things good to know</a></li>
+						<li><a href="#UID15s9xZTzkb">Template</a></li>
+						<li><a href="#UIDBX5YBLBNYJ">Styles</a>
+						<ul class="nav nav-list">
+								<li><a href="#UIDq3Es8TXXPn">Paragraphs and styles</a></li>
+								<li><a href="#UIDqEbxrUILAy">Titles and styles</a></li>
+								<li><a href="#UID7dyuOmohAR">Tables of contents and styles</a></li>
+							</ul></li>
+						<li><a href="#UID2p3swQb320">Replace/Insert content</a>
+							<ul class="nav nav-list">
+								<li><a href="#UIDIoOUqDCglr">Declare bookmark in Word</a></li>
+							</ul>
+						</li>
+<li><a href="#UIDyiyfT1ee0F">Word specific functions</a>
+	<ul class="nav nav-list">
+		<li><a href="#UID86MkIBbZQ8">Table of contents</a></li>
+		<li><a href="#UIDmhzjITxAsM">Page breaks</a></li>
+		<li><a href="#UIDjLp27TSSfk">Delete content</a></li>
+	</ul>
+</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9" data-spy="scroll" data-target="#navbar-div">
+				<h1 id="UIDZlbWOtJvNY">Getting Started</h1>
+				<div>
+					<p>
+						<span>In order to create a Microsoft Word document from R, you need first to create a docx object. You can then
+							send R outputs into that object which is a document representation. Finally, using
+							writeDoc, write the object into a document *.docx on your file system.</span>
+					</p>
+					<p>
+						<span>Below a commented R script:</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="functioncall">library</span><span class="keyword">(</span> <span
+							class="symbol">ReporteRs</span> <span class="keyword">)</span>
+
+<span class="comment"># Here we define word document filename to write</span>
+<span class="symbol">docx.file</span> <span class="assignement">=</span> <span
+							class="string">"document.docx"</span>
+
+<span class="comment"># Creation of doc, a docx object</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">docx</span><span class="keyword">(</span> <span
+							class="keyword">)</span>
+
+<span class="comment"># add into doc first 10 lines of iris</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addTable</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="symbol">iris</span><span class="keyword">[</span><span
+							class="number">1</span><span class="keyword">:</span><span
+							class="number">10</span><span class="keyword">,</span><span
+							class="keyword">]</span> <span class="keyword">)</span>
+
+<span class="comment"># add text with stylename "Normal" into doc </span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="string">"Hello World!"</span><span class="keyword">,</span> <span
+							class="argument">stylename</span> <span class="argument">=</span> <span
+							class="string">"Normal"</span> <span class="keyword">)</span>
+
+<span class="comment"># add a plot into doc </span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addPlot</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="keyword">function</span><span class="keyword">(</span><span
+							class="keyword">)</span> <span class="functioncall">plot</span><span
+							class="keyword">(</span> <span class="functioncall">rnorm</span><span
+							class="keyword">(</span><span class="number">10</span><span
+							class="keyword">)</span><span class="keyword">,</span> <span
+							class="functioncall">rnorm</span><span class="keyword">(</span><span
+							class="number">10</span><span class="keyword">)</span> <span
+							class="keyword">)</span>
+        <span class="keyword">,</span> <span class="argument">width</span> <span
+							class="argument">=</span> <span class="number">10</span><span
+							class="keyword">,</span> <span class="argument">height</span> <span
+							class="argument">=</span> <span class="number">8</span>
+<span class="keyword">)</span>
+
+<span class="comment"># write the doc </span>
+<span class="functioncall">writeDoc</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="symbol">docx.file</span> <span class="keyword">)</span></pre>
+				</div>
+				<div>
+					<p>
+						<span>When creating a docx object, a template is used. This
+							file is the original docx document that will be completed with R
+							ouputs. Formats and available styles will be (mainly) those
+							available in the template file</span>
+					</p>
+					<p>
+						<span>Tables, plots and paragraphs formats can be customised with dedicated functions.</span>
+					</p>
+				</div>
+				<h1 id="UIDVc7Ij0hWCc">Function list</h1>
+				<div>
+					<p>
+						Create a Microsoft Word document object representation with the function <span class="functioncall">docx</span>. See <a href="#UID15s9xZTzkb">Templates</a> for details on optional argument.
+					</p>
+					<p>
+						<span>The following functions can only be used when the
+							output format is docx.</span>
+					</p>
+				</div>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th class="HeaderCell"><p class="HeaderPar">
+									<span class="HeaderText">Functionality</span>
+								</p></th>
+							<th class="HeaderCell"><p class="HeaderPar">
+									<span class="HeaderText">Function</span>
+								</p></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><p>
+									<span>Get available styles from the template.</span>. 
+								</p>
+								
+								</td>
+							<td><p>
+									<span class="functioncall">styles</span> (see Styles <a href="#UIDBX5YBLBNYJ"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Add a title</span>
+								</p></td>
+							<td><p>
+									<span class="functioncall">addTitle</span> (see Titles and styles <a href="#UIDqEbxrUILAy"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Add a table</span>
+								</p></td>
+							<td><p>
+									<span class="functioncall">addTable</span> (see addTable <a href="addTable.html"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Add a FlexTable</span>
+								</p></td>
+							<td><p>
+									<span class="functioncall">addFlexTable</span> (see FlexTable <a href="FlexTable.html"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Add plots</span>
+								</p></td>
+							<td><p>
+									<span class="functioncall">addPlot</span> (see addPlot <a href="addPlot.html"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Add external images</span>
+								</p></td>
+							<td><p>
+									<span class="functioncall">addImage</span> (see External images <a href="miscellaneous.html#UIDcIOyzdIB01"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Add paragraphs of text</span>
+								</p></td>
+							<td><p>
+									<span class="functioncall">addParagraph</span> (see AddParagraph <a href="addParagraph.html"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Add a table of contents</span>
+
+								</p></td>
+							<td><p>
+									<span class="functioncall">addTOC</span> (see Table of contents <a href="#UID86MkIBbZQ8"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Add a page break</span>
+								</p></td>
+							<td><p>
+									<span class="functioncall">addPageBreak</span> (see Page breaks <a href="#UIDmhzjITxAsM"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Delete a content located
+										after a bookmark</span>
+								</p></td>
+							<td><p>
+									<span class="functioncall">deleteBookmarkNextContent</span> (see Delete content <a href="#UIDjLp27TSSfk"><span class="glyphicon glyphicon-zoom-in"></span></a>)
+								</p></td>
+						</tr>
+						<tr>
+							<td><p>
+									<span>Write the document into a
+										file</span>
+								</p></td>
+							<td><p>
+									<span>writeDoc</span>
+								</p></td>
+						</tr>
+					</tbody>
+				</table>
+				<h1 id="UIDVCTEN9a3Am">Things good to know</h1>
+				<ul>
+					<li><span>You can 'refresh' a Word document using Word
+							bookmarks.</span></li>
+					<li><span>You can add classical table of contents (e.g.
+							title 1, title 1.1, etc.) and specific table of contents (e.g.
+							table of plots)</span></li>
+					<li><span>Vector graphics in Word document cannot be
+							read if your MS version is &lt;= 2007.</span></li>
+				</ul>
+
+
+				<h1 id="UID15s9xZTzkb">Template</h1>
+				<div>
+					<p>
+						<span>You may need to generate docx documents in a
+							particular corporate template (with specific fonts, colour
+							schemes, logos, etc.).</span>
+					</p>
+					<p>
+						<span><span class="functioncall">docx</span> let you create
+							documents based on a 'docx' template file. </span>
+					</p>
+					<p>
+						<span>If none is provided, an empty document will be used
+							(located into the package directory).</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="comment"># use D:/docs/template/my_corporate_template.docx as template</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">docx</span><span class="keyword">(</span><span
+							class="argument">template</span><span class="argument">=</span><span
+							class="string">'D:/docs/template/my_corporate_template.docx'</span><span
+							class="keyword">)</span>
+
+<span class="comment"># use default template</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">docx</span><span class="keyword">(</span><span
+							class="keyword">)</span></pre>
+				</div>
+				<h1 id="UIDBX5YBLBNYJ">Styles</h1>
+				<div>
+					<p>
+						<span>Available styles are the paragraph styles contained
+							in the template.</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">docx</span><span class="keyword">(</span><span
+							class="keyword">)</span>
+<span class="functioncall">styles</span><span class="keyword">(</span><span
+							class="symbol">doc</span><span class="keyword">)</span></pre>
+				</div>
+				<pre>
+<span> [1] &quot;Normal&quot;                  &quot;Titre1&quot;                 </span>
+<span> [3] &quot;Titre2&quot;                  &quot;Titre3&quot;                 </span>
+<span> [5] &quot;Titre4&quot;                  &quot;Titre5&quot;                 </span>
+<span> [7] &quot;Titre6&quot;                  &quot;Titre7&quot;                 </span>
+<span> [9] &quot;Titre8&quot;                  &quot;Titre9&quot;                 </span>
+<span>[11] &quot;Titre&quot;                   &quot;Sous-titre&quot;             </span>
+<span>[13] &quot;Citation&quot;                &quot;Citationintense&quot;        </span>
+<span>[15] &quot;Lgende&quot;                  &quot;En-ttedetabledesmatires&quot;</span>
+<span>[17] &quot;Sansinterligne&quot;          &quot;Paragraphedeliste&quot;      </span>
+<span>[19] &quot;rPlotLegend&quot;             &quot;En-tte&quot;                 </span>
+<span>[21] &quot;Pieddepage&quot;              &quot;Titre10&quot;                </span>
+<span>[23] &quot;BulletList&quot;              &quot;Titre20&quot;                </span>
+<span>[25] &quot;TitleDoc&quot;                &quot;rRawOutput&quot;             </span>
+<span>[27] &quot;rTableLegend&quot;           </span></pre>
+				<div>
+					<p>
+						<span><strong>styles</strong> is used by
+							<span class="functioncall">addParagraph</span>,
+							<span class="functioncall">addTitle</span> and
+							<span class="functioncall">declareTitlesStyles</span>.</span>
+					</p>
+				</div>
+				<h2 id="UIDq3Es8TXXPn">Paragraphs and styles</h2>
+				<div>
+					<p>
+						<span>Function <span class="functioncall">addParagraph</span>
+							has a parameter <span class="argument">stylename</span> whose value
+							must be one of the names returned by the function
+							<span class="functioncall">styles</span>.</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="string">"Hello world!"</span><span class="keyword">,</span> <span
+							class="argument">stylename</span> <span class="argument">=</span> <span
+							class="string">"Normal"</span> <span class="keyword">)</span></pre>
+				</div>
+				<h2 id="UIDqEbxrUILAy">Titles and styles</h2>
+				<div>
+					<p>
+						<span>Function <span class="functioncall">addTitle</span> need to
+							know which styles are corresponding to which title level (1 ; 1.1
+							; 1.1.1 ; etc.).</span>
+					</p>
+					<p>
+						The argument <span class="argument">level</span> of function <span class="functioncall">addTitle</span> is an index of theses styles.
+					</p>
+					<p>
+					In MS Word, you can use whatever style you want as title formating style. But to be <b>considered as entries for a Table of Content</b>, used styles must be a <i><b>title</b></i> styles. Theses are always available in MS Word list styles.
+					</p>
+					<p>
+						<span>When template is read, ReporteRs try to guess what
+							are theses styles. If he do not succeed, you will see that error
+							when addTitle will be called:</span>
+					</p>
+					<p>
+						<span><code>You must defined title styles via
+							declareTitlesStyles first.</code></span>
+					</p>
+					<p>
+						<span>You have to use function
+							<span class="functioncall">declareTitlesStyles</span> to indicate which
+							available styles are meant to be used as title styles.</span>
+					</p>
+					<p>
+						The following example assume that available styles are <small>Titre1, Titre2, etc</small>. If your system is english, you should see <small>Title1, Title2, etc</small> when using <code>styles(...)</code>.
+					</p>
+				</div>
+				<div>
+					<pre><span class="symbol">docx.doc</span> <span class="assignement">=</span> <span
+							class="functioncall">docx</span><span class="keyword">(</span><span
+							class="keyword">)</span>
+<span class="functioncall">styles</span><span class="keyword">(</span> <span
+							class="symbol">docx.doc</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">declareTitlesStyles</span><span
+							class="keyword">(</span><span class="symbol">doc</span>
+  <span class="keyword">,</span> <span class="argument">stylenames</span> <span
+							class="argument">=</span> <span class="functioncall">c</span><span
+							class="keyword">(</span><span class="string">"Titre1"</span><span
+							class="keyword">,</span> <span class="string">"Titre2"</span><span
+							class="keyword">,</span> <span class="string">"Titre3"</span>
+                  <span class="keyword">,</span> <span class="string">"Titre4"</span><span
+							class="keyword">,</span> <span class="string">"Titre5"</span><span
+							class="keyword">,</span> <span class="string">"Titre6"</span>
+                  <span class="keyword">,</span> <span class="string">"Titre7"</span><span
+							class="keyword">,</span> <span class="string">"Titre8"</span><span
+							class="keyword">,</span> <span class="string">"Titre9"</span> <span
+							class="keyword">)</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addTitle</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="string">"title 1"</span><span class="keyword">,</span> <span
+							class="number">1</span> <span class="keyword">)</span></pre>
+				</div>
+				<h2 id="UID7dyuOmohAR">Tables of contents and styles</h2>
+				<div>
+					<p>
+						<span>Function <span class="functioncall">addTOC</span> has an
+							optional argument <span class="argument">stylename</span> , if used, a
+							table of contents will be created with entries formated with
+							style specified. An example of usage is a table of contents of
+							the produced graphics:</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addPlot</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="keyword">function</span><span class="keyword">(</span><span class="keyword">)</span> <span class="functioncall">plot</span><span class="keyword">(</span> <span class="functioncall">rnorm</span><span class="keyword">(</span><span class="number">10</span><span class="keyword">)</span><span class="keyword">,</span> <span class="functioncall">rnorm</span><span class="keyword">(</span><span class="number">10</span><span class="keyword">)</span> <span class="keyword">)</span>
+     <span class="keyword">,</span> <span class="argument">width</span> <span class="argument">=</span> <span class="number">5</span><span class="keyword">,</span> <span class="argument">height</span> <span class="argument">=</span> <span class="number">6</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addParagraph</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="argument">value</span><span class="argument">=</span><span class="string">"graph example 1"</span><span class="keyword">,</span> <span class="argument">stylename</span> <span class="argument">=</span> <span class="string">"rPlotLegend"</span> <span class="keyword">)</span>
+
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addPlot</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="keyword">function</span><span class="keyword">(</span><span class="keyword">)</span> <span class="functioncall">plot</span><span class="keyword">(</span> <span class="functioncall">rnorm</span><span class="keyword">(</span><span class="number">100</span><span class="keyword">)</span><span class="keyword">,</span> <span class="functioncall">rnorm</span><span class="keyword">(</span><span class="number">100</span><span class="keyword">)</span> <span class="keyword">)</span>
+                <span class="keyword">,</span> <span class="argument">width</span> <span class="argument">=</span> <span class="number">5</span><span class="keyword">,</span> <span class="argument">height</span> <span class="argument">=</span> <span class="number">6</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addParagraph</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="argument">value</span><span class="argument">=</span><span class="string">"graph example 2"</span><span class="keyword">,</span> <span class="argument">stylename</span> <span class="argument">=</span> <span class="string">"rPlotLegend"</span> <span class="keyword">)</span>
+
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTOC</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="argument">stylename</span><span class="argument">=</span><span class="string">"rPlotLegend"</span> <span class="keyword">)</span></pre>
+				</div>
+				<div>
+					<p>
+						<span>Do not use styles names that contains special
+							character. In France for example, the default style named
+							&quot;Legend&quot; becomes &quot;L?gende&quot; and is returned as
+							&quot;Lgende&quot; by the styles R function. The workaround is to
+							create a new style based on &quot;L?gende&quot; and to name it
+							&quot;Legende&quot;. It will be then a valid name to use with
+							<code>ReporteRs</code>.</span>
+					</p>
+				</div>
+				<h1 id="UID2p3swQb320">Replace/Insert content</h1>
+				<div>
+					<p>
+						<span>You can replace Word bookmarks by tables, paragraphs
+							and plots.</span>
+					</p>
+					<p>
+						<span>MS Work bookmarks can be used to define a named
+							location in your document. Read MS documentation about bookmark
+							&lt;a
+							href=&quot;http://www.wikihow.com/Add-a-Bookmark-in-Microsoft-Word&quot;&gt;here&lt;/a&gt;.</span>
+					</p>
+					<p>
+						<span>Functions <span class="functioncall">addTable</span>,
+							<span class="functioncall">addFlexTable</span>,
+							<span class="functioncall">addPlot</span>,
+							<span class="functioncall">addParagraph</span> and
+							<span class="functioncall">addImage</span> can send respective outputs
+							into theses bookmarks.</span>
+					</p>
+					<p>
+						<span>Theses functions have an optional argument
+							<span class="argument">bookmark</span>, if used, content (tables,
+							plots, paragraphs or images) will &lt;b&gt;replace the whole
+							paragraph containing the bookmark&lt;/b&gt;.</span>
+					</p>
+					<p>
+						<span>Behavior is different for tables, table is added
+							<strong>AFTER</strong> the paragraph that contains the bookmark. See
+							<a href="#UIDjLp27TSSfk">Delete content</a> if iterations
+							over the same document are needed.</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="comment"># Word document to write</span>
+<span class="symbol">docx.file</span> <span class="assignement">=</span> <span
+							class="string">"document.docx"</span>
+
+<span class="comment"># Word document to use a template.</span>
+<span class="comment"># It contains content and bookmarks</span>
+<span class="comment"># where R outputs will be inserted.</span>
+<span class="symbol">template.file</span> <span class="assignement">=</span> <span
+							class="functioncall">file.path</span><span class="keyword">(</span> <span
+							class="functioncall">find.package</span><span class="keyword">(</span><span
+							class="string">"ReporteRs"</span><span class="keyword">)</span><span
+							class="keyword">,</span> <span class="string">"templates/bookmark_example.docx"</span><span
+							class="keyword">,</span> <span class="argument">fsep</span> <span
+							class="argument">=</span> <span class="string">"/"</span> <span
+							class="keyword">)</span>
+
+<span class="comment"># create document</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">docx</span><span class="keyword">(</span> <span
+							class="argument">title</span> <span class="argument">=</span> <span
+							class="string">"My example"</span><span class="keyword">,</span> <span
+							class="argument">template</span> <span class="argument">=</span> <span
+							class="symbol">template.file</span> <span class="keyword">)</span>
+
+<span class="comment"># replace bookmarks 'AUTHOR' and 'REVIEWER' by dummy values</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span>
+                    <span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="functioncall">c</span><span class="keyword">(</span> <span
+							class="string">"James Sonny Crockett"</span><span class="keyword">,</span> <span
+							class="string">"Ricardo Rico Tubbs"</span> <span class="keyword">)</span>
+                    <span class="keyword">,</span> <span
+							class="argument">stylename</span> <span class="argument">=</span> <span
+							class="string">"Normal"</span>
+                    <span class="keyword">,</span> <span
+							class="argument">bookmark</span> <span class="argument">=</span> <span
+							class="string">"AUTHOR"</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span>
+                    <span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="functioncall">c</span><span class="keyword">(</span> <span
+							class="string">"Martin Marty Castillo"</span> <span
+							class="keyword">)</span>
+                    <span class="keyword">,</span> <span
+							class="argument">stylename</span> <span class="argument">=</span> <span
+							class="string">"Normal"</span>
+                    <span class="keyword">,</span> <span
+							class="argument">bookmark</span> <span class="argument">=</span> <span
+							class="string">"REVIEWER"</span> <span class="keyword">)</span>
+
+<span class="comment"># replace bookmarks 'DATA' and 'CONFINT' by data.frame objects 'data'</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addTable</span><span class="keyword">(</span> <span
+							class="symbol">doc</span>
+                <span class="keyword">,</span> <span class="symbol">iris</span><span
+							class="keyword">[</span><span class="number">5</span><span
+							class="keyword">:</span><span class="number">10</span><span
+							class="keyword">,</span><span class="keyword">]</span>
+                <span class="keyword">,</span> <span class="argument">bookmark</span> <span
+							class="argument">=</span> <span class="string">"DATA"</span> <span
+							class="keyword">)</span>
+
+<span class="comment">## replace bookmark 'PLOT' by a plot</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addPlot</span><span class="keyword">(</span> <span
+							class="symbol">doc</span>
+               <span class="keyword">,</span> <span class="argument">fun</span> <span
+							class="argument">=</span> <span class="symbol">plot</span>
+               <span class="keyword">,</span> <span class="argument">x</span> <span
+							class="argument">=</span> <span class="functioncall">rnorm</span><span
+							class="keyword">(</span> <span class="number">100</span> <span
+							class="keyword">)</span>
+               <span class="keyword">,</span> <span class="argument">y</span> <span
+							class="argument">=</span> <span class="functioncall">rnorm</span> <span
+							class="keyword">(</span><span class="number">100</span> <span
+							class="keyword">)</span>
+               <span class="keyword">,</span> <span class="argument">main</span> <span
+							class="argument">=</span> <span class="string">"base plot main title"</span>
+               <span class="keyword">,</span> <span class="argument">bookmark</span> <span
+							class="argument">=</span> <span class="string">"PLOT"</span><span
+							class="keyword">)</span>
+
+<span class="comment">## replace values in a complicated layout table</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="functioncall">c</span><span class="keyword">(</span> <span
+							class="string">"Header 1"</span> <span class="keyword">)</span><span
+							class="keyword">,</span> <span class="argument">stylename</span> <span
+							class="argument">=</span> <span class="string">"NAMESTYLE"</span><span
+							class="keyword">,</span> <span class="argument">bookmark</span> <span
+							class="argument">=</span> <span class="string">"COLNAME1"</span> <span
+							class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="functioncall">c</span><span class="keyword">(</span> <span
+							class="string">"Header 2"</span> <span class="keyword">)</span><span
+							class="keyword">,</span> <span class="argument">stylename</span> <span
+							class="argument">=</span> <span class="string">"NAMESTYLE"</span><span
+							class="keyword">,</span> <span class="argument">bookmark</span> <span
+							class="argument">=</span> <span class="string">"COLNAME2"</span> <span
+							class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="functioncall">c</span><span class="keyword">(</span> <span
+							class="string">"Header 3"</span> <span class="keyword">)</span><span
+							class="keyword">,</span> <span class="argument">stylename</span> <span
+							class="argument">=</span> <span class="string">"NAMESTYLE"</span><span
+							class="keyword">,</span> <span class="argument">bookmark</span> <span
+							class="argument">=</span> <span class="string">"COLNAME3"</span> <span
+							class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="functioncall">c</span><span class="keyword">(</span> <span
+							class="string">"Row name 1"</span> <span class="keyword">)</span><span
+							class="keyword">,</span> <span class="argument">stylename</span> <span
+							class="argument">=</span> <span class="string">"NAMESTYLE"</span><span
+							class="keyword">,</span> <span class="argument">bookmark</span> <span
+							class="argument">=</span> <span class="string">"ROWNAME1"</span> <span
+							class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="functioncall">c</span><span class="keyword">(</span> <span
+							class="string">"Row name 2"</span> <span class="keyword">)</span><span
+							class="keyword">,</span> <span class="argument">stylename</span> <span
+							class="argument">=</span> <span class="string">"NAMESTYLE"</span><span
+							class="keyword">,</span> <span class="argument">bookmark</span> <span
+							class="argument">=</span> <span class="string">"ROWNAME2"</span> <span
+							class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addParagraph</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="argument">value</span> <span class="argument">=</span> <span
+							class="functioncall">c</span><span class="keyword">(</span> <span
+							class="string">"Hello World!"</span> <span class="keyword">)</span><span
+							class="keyword">,</span> <span class="argument">stylename</span> <span
+							class="argument">=</span> <span class="string">"DATASTYLE"</span><span
+							class="keyword">,</span> <span class="argument">bookmark</span> <span
+							class="argument">=</span> <span class="string">"ANYDATA"</span> <span
+							class="keyword">)</span>
+
+<span class="comment">## write the document</span>
+<span class="functioncall">writeDoc</span><span class="keyword">(</span> <span
+							class="symbol">doc</span><span class="keyword">,</span> <span
+							class="symbol">docx.file</span> <span class="keyword">)</span></pre>
+				</div>
+
+				<h2 id="UIDIoOUqDCglr">Declare bookmark in Word</h2>
+				<div><p><span>To add a bookmark that ReporteRs will use later, you have to add the bookmark on a portion of a text in a paragaph. No matter what is the selected text, ReporteRs will replace the whole paragraph. To make it work properly, do not add the bookmark on the whole paragraph on between two or more pargraph.</span></p></div>
+				<div class="text-danger"><p>Below an example that won't work (bookmark brackets are on the whole paragraph)</p></div>
+				<div><img src="data:image/png;base64,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
+2tqaVKtVyWazsr29LfPz8/Liiy/uy4lMR0ZGZGdnR3Z2djyT9qfN1taWGIZh633pRd1du3ZN
+DMOw3Rlvbm5KOp2WUqnUtbmEoqpUKp7n6LVr1w5k3E1PT8v9+/elWCxKIpGQ1dVVmZiY6Hij
+fj+0c8lk0nP7Ozs7MjIysi/K1a1NTqfTcvHiRVldXe35VA5PMnaehAsXLpg9UqrXbGJiQh48
+eCDJZLKjN9PrOrqfY0/X5ivj4+OyvLwsOzs7Uq1W+zd587pQqa5H3R2qH2sP1dNAPS597bXX
+tMFw69Yt2djYkGQyKe122xY0Y2Nj+/a4rHUbpdfp119/9Y2BI0eOBFrXvXv3XL9Td73dvlvy
+q7tuu3Tpkmxvb0symexInorFYk/rXj0SeZK86twtBryO5ZlnnunajdmXX34pjx8/llKpZF7w
+nL0oUdq5MMM4/Kg2upvnQy8tLCzI+vq6xONxKZfL0mw2zfNBd2HdbXsVlnXYSdCyCRo73YyD
+IFqtlnz++eeSSCRsPU/q/6urq6F6M7sde0+jPUneVLfiZ599pv1edaMmEolQd8vqscj6+nrP
+/lZZN129elUb9D/99JOI6MdhWHsY1KMvXa/KvXv3tHNX7XX27yWTyZgn8dLSkja5111g1SO1
+r7/+2vWmQJXBmTNnPPdBPT5ot9uu87NdvnxZREROnTq1J+XgV3de/vzzz8DL/vHHHyLy35jS
+yclJ23e9+ssF6tHId999F+n3YY43SJ37jYtRj25WV1e1bUqr1TKPRY1R6qbZ2Vlz/KYasxel
+nVPHcefOnVCJhy4uxsfHzfM2yJyGTv/884/vMrp60bWPu6Ee558+fVqmp6dtyYMuzqK2V0Fu
+InQdGd988415HexW7ESNg926e/eutNttOXv2rNnzpHrVlpeXAyduu429sPr5L7rsSfJ28eJF
+845gZmbGbIDUeBx1x6C6WcMkAyoxPHXqlG0C0VarZU7C2s2/V9ZNKysrkk6nzRN5c3NTstms
+Obha9co0Gg0ZHByUhYUF8wTc3Nw0GzfrWBfrher99983l1dl8aTvYFRCdOnSJbPBVpNNnjx5
+UvsoQ71AsL293TEJ5eLiotnbmM1mfbvOh4aGzITi0qVLHWWaz+fNQf8ff/zxro83TN0F8e23
+30qr1ZJWq+V7IVc9Q1988YW5rJq09/r16z2p7zNnzkg8Hpft7W1brKt9mZubk8HBQddeebfj
+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
+AABJRU5ErkJggg=="></div>
+<div class="text-danger"><p>Below an example that will work (bookmark brackets are not on the whole paragraph)</p></div>
+
+<div><img src="data:image/png;base64,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
+h4aGJJvN2kmPs52o1WqSz+ftRUgnJyddc2ucn200Gvata9M0d52ojY6Odiygu7i4aHf+qpPt
+pp2bnJwUwzCk3W5LNpt1LVi9uLgo6XRamxzduHHDLmfncZ0+fdq+Zubm5lyd/uLiouTzed9F
+tu/fv2/vy1vP6ryKxaK9X7Xgtu5hjd1Qo+03btxwtT1zc3O+fU837VWYdrstY2NjrnKcm5uz
+f7xF6Qejxk63cdAr1Wp11wnibmIvLr/4V+3N4OBgX80Lj7U8h98/5/IG3SwwGuUR/bDF/ETz
+uLwEPBLuXPMq7uPkcddRCyo/7/pNQefnXfbBux6cONYcUktPxFkOIWzJD/FZS8hv4VG/+gpa
+QLKbBZP9HrnuZkHTsLiJstxDWN0FLWegO/+wBW+DFh7VLRcR9ph6WPz7XTthdSciHWvRhZ2v
+cx2rOMt2SIRFd7tZXDlsKQpdufotHiqaZRe6aefCFhx1xp5uOYE4C4tLyHJH4rMobdAxqj4j
+aMHbMM7rIaztEZ+FhrtpryRgeQ7TNLXlIj7Lbeja5jixEycO4i5rERT7QQvy5nK5yEvvdBN7
+cc8jLP6d7U23azsGLWi+p8tzxJmjsby8LOVy2R6aVbLZrFQqlcAlD4LmrWUyGdnc3JRCoeAa
+nTBNU7LZrJTL5VjzgNQ56eY6qeOIO3fJ7/g//vhjqVQqruPOZrNSr9ddt6oymUxH2RmGIdls
+VqrVasdtrWvXrtkTTNVnc7mc3Lp1S1577TXf8wv7JepX36o8oswvHBoaklu3bnXMWygWi7K1
+tWWPiHm3pZ6gyWazrvJPJpNSKpVka2vLdzjde65DQ0OyuroqxWLRVfaqnOr1um/MxK37uHXn
+V87T09NSLBZdZRb29OH4+LhUKhXXvpPJpJTL5a6e+gyLf79rZ3p6Wur1uuRyOddtnWQyKblc
+TqrVasdIaNTzjToiOTIyIpubm9pjKBQK9qitqjMVo87PmqYphUJBNjc3e/Kgwpdffqk9nmKx
+2LE0TDft3OTkpNTr9Y5rJpVKSalUktdff91VPpVKxdVmOOfIDg0NydbWlpRKpY5YVtu7cuVK
+xzkuLS25Pq9GNp3HqGsDq9WqPaLt1+7EacPUOdy8edNVHqrt8VuKp9v2Kug6UQ8X+W0zSj8S
+J3bixEGUPjcqv7sba2trsrKyIhMTE5H+/GC3sRenXsLiv9crO+zriBq60+tV1wG/ldif9GtI
+N/IJ9OP1EDbq+iRRI1DOvyjkHB1WI4JPQ1k89hE1ANhvtVpN1tbWfBeXBfB4qQWs5+fnO0bW
+MpmMnDt3jkLqARI1AH1JPYixH0+BAeje5cuXOx4gWVxctB98UX+15WmgbsP2alkfEZH/EmIA
++s3GxoasrKxIsVh8qhZSBg6S999/X9555x1ZXV3V/vk0kX/n1PnNLXsSZTKZjkWY79y5Q6J2
+UDJsANGMjIxoV5wHDopejqj0q8nJSTl69KhcvXpVbt265fqzi6lUSnK5nJw/f35f/jTXkyxh
+0RoCB45akzDsNYBrADjYmKMGAADQpxhRAwAA6FOMqAEAAJCoAQAAgEQNAACARA0AAAAkagAA
+ACRqAAAAIFEDAAAAiRoAAACJGgAAAEjUAAAASNQAAABAogYAAAASNQAAABI1AAAAkKgBAACQ
+qAEAAIBEDQAAgEQNAAAAJGoAAAAgUQMAACBRAwAAAIkaAAAAiRoAAABI1AAAAECiBgAAQKIG
+AAAAEjUAAAASNQAAAJCoAQAAkKiF29jYkHw+L4ODg5JIJLT/BgYGKFEAAIAeSViWZYV9qNFo
+yNjYmLTb7dANRtgcAAAAIggdUWu1Wr5JWiqVEsuyxLIsSaVSlCYAAMB+JmpLS0uRRtIAAACw
+z4nagwcPKCUAAIB+TNQAAADQp4nakSNHKCUAAIB+TNTOnDlDKQEAAPRjojYyMiLlcpmSAgAA
+6LdETURkenpaqtWq5HI5MQyDUgMAAOiXRE1EZHx8XJaXl2VnZ0eq1SolBwAA0C+JGgAAAEjU
+AAAAQKIGAABAogYAAAASNQAAABI1AAAAkKgBAACQqEVy+PBhERE5dOgQJQgAALBHEpZlWRQD
+AABA/+HWJwAAAIkaAAAASNQAAABI1AAAAECiBgAAQKIGAAAAEjUAAACQqAEAAJCoAQAAgEQN
+AACARA0AAAAkagAAACBRAwAAIFEDAAAAiRoAAACJGgAAAEjUAAAASNQAAABAogYAAIAQ/wPV
+Uzu3wKC4dgAAAABJRU5ErkJggg=="></div>
+				
+<h1 id="UIDyiyfT1ee0F">Word specific functions</h1>
+<h2 id="UID86MkIBbZQ8">Table of contents</h2>
+<div><p><span>Insert a table of contents with function <span class="functioncall">addTOC</span>.</span></p></div>
+<div><pre><span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTOC</span><span class="keyword">(</span><span class="symbol">doc</span><span class="keyword">)</span></pre></div>
+<div><p><span>Insert a customized table of contents with argument <span class="argument">stylename</span>. If used, a table of contents will be created containing entries formated with specified styles. <a href="word.html#UID7dyuOmohAR">Details</a>.</span></p></div>
+<h2 id="UIDmhzjITxAsM">Page breaks</h2>
+<div><p><span>Insert a page break with function <span class="functioncall">addPageBreak</span>.</span></p></div>
+<div><pre><span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addPageBreak</span><span class="keyword">(</span><span class="symbol">doc</span><span class="keyword">)</span></pre></div>
+<h2 id="UIDjLp27TSSfk">Delete content</h2>
+<div><p><span>Function <span class="functioncall">deleteBookmarkNextContent</span> delete the content just after a bookmark.</span></p><p><span>It has to be used when 'refreshing' a table in a docx file. </span></p><p><span>Because Word bookmarked are located in paragraphs, it is not possible to bookmark a table. <span class="functioncall">AddTable</span> is using bookmark as the <b>location just before</b> the location where table has to be inserted.</span></p><p><span>If a document table need to be updated, it has to be done in two steps, suppress the previous added table with <span class="functioncall">deleteBookmarkNextContent</span> and then insert new table with <span class="functioncall">AddTable</span>.</span></p></div>
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+	<div class="bs-docs-nav">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">ReporteRs</a>
+				<button class="navbar-toggle" data-toggle="collapse">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span
+						class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="gettingstarted.html">Getting Started</a></li>
+						<li><a href="miscellaneous.html">Miscellaneous</a></li>
+
+						<li class="dropdown active"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">Documents<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li class="active"><a href="word.html">Word documents</a></li>
+								<li><a href="powerpoint.html">PowerPoint documents</a></li>
+								<li><a href="web.html">HTML documents</a></li>
+							</ul></li>
+
+						<li class="dropdown"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown">Main functions
+								<b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="addTable.html">addTable</a></li>
+								<li><a href="addPlot.html">addPlot</a></li>
+								<li><a href="addParagraph.html">addParagraph</a></li>
+								<li><a href="FlexTable.html">FlexTable</a></li>
+							</ul></li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+
+    <p>Maintained by David Gohel.</p>
+    <p>Code licensed under <a href="https://gnu.org/licenses/gpl.html" target="_blank">GPL-3</a>.</p>
+    <ul class="bs-docs-footer-links muted">
+      <li>Currently v0.2</li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs">GitHub</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/issues">Issues</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+
+	<script type="text/javascript">var $window = $(window)
+var $body   = $(document.body)
+var navHeight = $('.navbar').outerHeight(true) + 10
+$body.scrollspy({
+	target: '.bs-sidebar',
+	offset: navHeight
+})
+$window.on('load', function () {
+	$body.scrollspy('refresh')
+})
+$('.bs-docs-container [href=#]').click(function (e) {
+	e.preventDefault()
+})
+setTimeout(function () {
+	var $sideBar = $('.bs-sidebar')
+$sideBar.affix({
+	offset: {
+	top: function () {
+		var offsetTop	  = $sideBar.offset().top
+		var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+		var navOuterHeight = $('.bs-docs-nav').height()
+		return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+		}	, bottom: function () {
+		return (this.bottom = $('.bs-footer').outerHeight(true))
+		}
+	}
+	})
+}, 100)
+setTimeout(function () {
+	$('.bs-top').affix()
+}, 100)
+</script>
+</body>
+</html>

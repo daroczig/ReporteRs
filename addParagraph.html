@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Texts in ReporteRs</title>
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"
+	media="all" />
+<link rel="stylesheet" href="css/html4r.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/highlight.css" type="text/css"
+	media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-3" id="navbar-div">
+				<div class="navbar-fixed-topleft nav nav-list bs-sidebar"
+					role="navigation">
+					<ul class="nav nav-list">
+						<li><a href="#UIDp4icPeogu1">Features</a></li>
+						<li><a href="#UIDmc56in1jLx">Usage</a></li>
+						<li><a href="#UIDuLPBpH2WKl">addParagraph behaviours</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9" data-spy="scroll" data-target="#navbar-div">
+				<h1 id="UIDp4icPeogu1">Features</h1>
+				<ul>
+					<li><span>Insert paragraph of texts into the output
+							document.</span></li>
+					<li><span>Apply formating properties to chunk of texts</span></li>
+				</ul>
+				<h1 id="UIDmc56in1jLx">Usage</h1>
+				<div>
+					<p>
+						<span><span class="functioncall">addParagraph</span> require one of
+							the following two types of argument:</span>
+					</p>
+				</div>
+				<ul>
+					<li><span>Either a
+							<span class="functioncall">set_of_paragraphs</span> object</span></li>
+					<li><span>Either a <code>character</code>
+							vector</span></li>
+				</ul>
+				<div>
+					<p><span>A <code>set_of_paragraphs</code>
+							object is a container for <code>pot</code> objects:</span></p>
+				</div>
+				<ul>
+					<li><span>A <code>pot</code> object is a
+							<i>paragraph of texts</i>, each text has its own font
+							properties.</span></li>
+					<li><span>a <code>pot</code> object is a
+							convenient way to define a paragraph of text where some texts are
+							not all formated the same.</span></li>
+					<li><span><code>pot</code> object can be
+							added with another <code>pot</code> object or with a
+							single text value (a character vector of length 1).</span></li>
+				</ul>
+				<div>
+					<p>
+						<span><code>pot</code> object can be created
+							with the function <span class="functioncall">pot</span>.</span>
+					</p>
+					<p>
+						<span>The function has two arguments:</span>
+					</p>
+				</div>
+				<ul>
+					<li><span><span class="argument">value</span>: a text value or a
+							value that has a format method returning character value.</span></li>
+					<li><span><span class="argument">format</span> (optional):
+							formating properties (an object returned by
+							<span class="functioncall">textProperties</span>).</span></li>
+				</ul>
+				<div>
+					<p>
+						<span>Below some examples:</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="comment"># create a pot made of "My tailor" with a red font.</span>
+<span class="symbol">text</span> <span class="assignement">=</span> <span class="functioncall">pot</span><span class="keyword">(</span><span class="string">"My tailor"</span><span class="keyword">,</span> <span class="functioncall">textProperties</span><span class="keyword">(</span><span class="argument">color</span><span class="argument">=</span><span class="string">"#354B5E"</span><span class="keyword">,</span> <span class="argument">font.weight</span> <span class="argument">=</span> <span class="string">"bold"</span><span class="keyword">,</span> <span class="argument">font.size</span> <span class="argument">=</span> <span class="number">20</span> <span class="keyword">)</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addParagraph</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="functioncall">set_of_paragraphs</span><span class="keyword">(</span><span class="symbol">text</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">stylename</span> <span class="argument">=</span> <span class="string">"normal"</span> <span class="keyword">)</span>
+
+<span class="comment"># a quite  full demo.</span>
+<span class="symbol">text</span> <span class="assignement">=</span> <span class="functioncall">pot</span><span class="keyword">(</span> <span class="argument">value</span> <span class="argument">=</span> <span class="string">"My tailor"</span>
+        <span class="keyword">,</span> <span class="argument">format</span> <span class="argument">=</span> <span class="functioncall">textProperties</span><span class="keyword">(</span><span class="argument">color</span><span class="argument">=</span><span class="string">"#354B5E"</span>
+                                <span class="keyword">,</span> <span class="argument">font.size</span> <span class="argument">=</span> <span class="number">20</span>
+                                <span class="keyword">,</span> <span class="argument">font.weight</span> <span class="argument">=</span> <span class="string">"bold"</span>
+                                <span class="keyword">,</span> <span class="argument">font.style</span> <span class="argument">=</span> <span class="string">"italic"</span>
+                                <span class="keyword">,</span> <span class="argument">underlined</span> <span class="argument">=</span> <span class="number">TRUE</span>
+                                <span class="keyword">,</span> <span class="argument">font.family</span> <span class="argument">=</span> <span class="string">"Courier New"</span>
+                <span class="keyword">)</span>
+<span class="keyword">)</span> <span class="keyword">+</span> <span class="string">" is rich"</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addParagraph</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="functioncall">set_of_paragraphs</span><span class="keyword">(</span><span class="symbol">text</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">stylename</span> <span class="argument">=</span> <span class="string">"normal"</span> <span class="keyword">)</span></pre>
+				</div>
+				<div>
+					<p>
+						<span>It produces the following result:</span>
+					</p>
+				</div>
+				<div><p><span style="font-size:20px;font-family:Helvetica;font-weight:bold;color:#354B5E;">My tailor</span></p></div>
+
+				<div><p><span style="font-size:20px;font-family:Courier New;font-weight:bold;font-style:italic;text-decoration:underline;color:#354B5E;">My tailor</span><span> is rich</span></p></div>
+
+				
+				<pre><span class="functioncall">options</span><span class="keyword">(</span><span class="string">"ReporteRs-fontsize"</span><span class="argument">=</span><span class="number">20</span><span class="keyword">)</span>
+<span class="comment"># create a pot made of </span>
+<span class="comment"># - "My tailor" with font color = #354B5E.</span>
+<span class="comment"># - " is " with default font.</span>
+<span class="comment"># - "rich" with bold font and font color = #D74B4B.</span>
+<span class="symbol">text</span> <span class="assignement">=</span> <span class="functioncall">pot</span><span class="keyword">(</span><span class="string">"My tailor"</span><span class="keyword">,</span> <span class="functioncall">textProperties</span><span class="keyword">(</span><span class="argument">color</span><span class="argument">=</span><span class="string">"#354B5E"</span><span class="keyword">)</span> <span class="keyword">)</span> <span class="keyword">+</span> <span class="string">" is "</span> <span class="keyword">+</span> <span class="functioncall">pot</span><span class="keyword">(</span><span class="string">"rich"</span><span class="keyword">,</span> <span class="functioncall">textProperties</span><span class="keyword">(</span><span class="argument">font.weight</span><span class="argument">=</span><span class="string">"bold"</span><span class="keyword">,</span> <span class="argument">color</span> <span class="argument">=</span> <span class="string">"#D74B4B"</span><span class="keyword">)</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addParagraph</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="functioncall">set_of_paragraphs</span><span class="keyword">(</span><span class="symbol">text</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">stylename</span> <span class="argument">=</span> <span class="string">"normal"</span> <span class="keyword">)</span>
+
+
+<span class="symbol">text1</span> <span class="assignement">=</span> <span class="functioncall">pot</span><span class="keyword">(</span><span class="string">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus."</span><span class="keyword">,</span> <span class="functioncall">textProperties</span><span class="keyword">(</span><span class="argument">color</span><span class="argument">=</span><span class="string">"#D74B4B"</span><span class="keyword">)</span> <span class="keyword">)</span> <span class="keyword">+</span> <span class="string">" Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addParagraph</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="functioncall">set_of_paragraphs</span><span class="keyword">(</span><span class="symbol">text1</span><span class="keyword">,</span> <span class="string">"Cras elementum ultrices diam."</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">stylename</span> <span class="argument">=</span> <span class="string">"normal"</span> <span class="keyword">)</span></pre>
+
+
+<div><p><span>It produces the following result:</span></p></div>
+<div><p><span style="font-size:20px;font-family:Helvetica;color:#354B5E;">My tailor</span><span> is </span><span style="font-size:20px;font-family:Helvetica;font-weight:bold;color:#D74B4B;">rich</span></p></div>
+<div><p><span style="font-size:20px;font-family:Helvetica;color:#D74B4B;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</span><span> Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</span></p><p><span>Cras elementum ultrices diam.</span></p></div>
+				
+				
+				<h1 id="UIDuLPBpH2WKl">addParagraph behaviours</h1>
+				<div>
+					<p>
+						<span>If <span class="functioncall">addParagraph</span> is used with
+							a docx object, default font properties will be those defined in
+							the style defined by argument <span class="argument">stylename</span>.</span>
+					</p>
+					<p>
+						<span>If beeing used with a pptx object, default font
+							properties will be those defined in the corresponding shape (of
+							the used layout)</span>
+					</p>
+					<p>
+						<span>If beeing used with an html object, default font
+							properties will be those defined by argument
+							<span class="argument">stylename</span> (this need to be defined
+							somewhere as a css properties declaration, if not properties will
+							be 'body' properties.).</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bs-docs-nav">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">ReporteRs</a>
+				<button class="navbar-toggle" data-toggle="collapse">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span
+						class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="gettingstarted.html">Getting Started</a></li>
+						<li><a href="miscellaneous.html">Miscellaneous</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">Documents<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="word.html">Word documents</a></li>
+								<li><a href="powerpoint.html">PowerPoint documents</a></li>
+								<li><a href="web.html">HTML documents</a></li>
+							</ul></li>
+
+						<li class="dropdown active"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown">Main functions
+								<b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="addTable.html">addTable</a></li>
+								<li><a href="addPlot.html">addPlot</a></li>
+								<li class="active"><a href="addParagraph.html">addParagraph</a></li>
+								<li><a href="FlexTable.html">FlexTable</a></li>
+							</ul></li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+
+    <p>Maintained by David Gohel.</p>
+    <p>Code licensed under <a href="https://gnu.org/licenses/gpl.html" target="_blank">GPL-3</a>.</p>
+    <ul class="bs-docs-footer-links muted">
+      <li>Currently v0.2</li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs">GitHub</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/issues">Issues</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+	<script type="text/javascript">var $window = $(window)
+	var $body   = $(document.body)
+	var navHeight = $('.navbar').outerHeight(true) + 10
+	$body.scrollspy({
+		target: '.bs-sidebar',
+		offset: navHeight
+	})
+	$window.on('load', function () {
+		$body.scrollspy('refresh')
+	})
+	$('.bs-docs-container [href=#]').click(function (e) {
+		e.preventDefault()
+	})
+	setTimeout(function () {
+		var $sideBar = $('.bs-sidebar')
+	$sideBar.affix({
+		offset: {
+		top: function () {
+			var offsetTop	  = $sideBar.offset().top
+			var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+			var navOuterHeight = $('.bs-docs-nav').height()
+			return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+			}	, bottom: function () {
+			return (this.bottom = $('.bs-footer').outerHeight(true))
+			}
+		}
+		})
+	}, 100)
+	setTimeout(function () {
+		$('.bs-top').affix()
+	}, 100)
+</script>
+</body>
+</html>

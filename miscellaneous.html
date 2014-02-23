@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Miscellaneous</title>
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"
+	media="all" />
+<link rel="stylesheet" href="css/html4r.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/highlight.css" type="text/css"
+	media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/raphael-min.js"></script>
+</head>
+<body>
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-3" id="navbar-div">
+				<div class="navbar-fixed-topleft nav nav-list bs-sidebar"
+					role="navigation">
+					<ul class="nav nav-list">
+						<li><a href="#UIDcIOyzdIBqb">Default values</a></li>
+						<li><a href="#UIDKsKqyfgl2x">Format functions</a>
+						<ul class="nav nav-list">
+								<li><a href="#UIDvp6rwYikdA">Text formatting properties</a></li>
+								<li><a href="#UIDVBayvF96fx">Paragraph formatting
+										properties</a></li>
+								<li><a href="#UIDxp8HhkXqYH">Cell formatting properties</a></li>
+							</ul></li>
+						<li><a href="#UIDcIOyzdIB01">External images</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9" data-spy="scroll" data-target="#navbar-div">
+				<h1 id="UIDcIOyzdIBqb">Default values</h1>
+				<div>
+					<p>
+						<span>With ReporteRs, some options can be used to reduce
+							usage of some parameters:</span>
+					</p>
+				</div>
+				<ul>
+					<li><span><span class="argument">ReporteRs-default-font</span>:
+							Default font family to use (default to &quot;Helvetica&quot;).
+							This will be used as default values for argument
+							<span class="argument">fontname</span> of
+							<span class="functioncall">addPlot</span> and argument
+							<span class="argument">font.family</span> of
+							<span class="functioncall">pot</span>.</span></li>
+					<li><span><span class="argument">ReporteRs-fontsize</span>:
+							Default font size to use (default to 11). This will be used as
+							default values for argument <span class="argument">pointsize</span> of
+							<span class="functioncall">addPlot</span> and argument
+							<span class="argument">font.size</span> of
+							<span class="functioncall">pot</span>.</span></li>
+					<li><span><span class="argument">ReporteRs-locale.language</span>:
+							language encoding (for html objects). Default to &quot;en&quot;.</span></li>
+					<li><span><span class="argument">ReporteRs-locale.region</span>:
+							region encoding (for html objects). Default to &quot;US&quot;.</span></li>
+				</ul>
+				<div>
+					<pre><span class="functioncall">options</span><span class="keyword">(</span><span
+							class="string">'ReporteRs-fontsize'</span><span class="argument">=</span><span
+							class="number">10</span><span class="keyword">,</span> <span
+							class="string">'ReporteRs-default-font'</span><span
+							class="argument">=</span><span class="string">'Arial'</span><span
+							class="keyword">)</span></pre>
+				</div>
+				<h1 id="UIDKsKqyfgl2x">Format functions</h1>
+				<h2 id="UIDvp6rwYikdA">Text formatting properties</h2>
+				<div>
+					<p>
+						<span>Use function <span class="functioncall">textProperties</span>
+							to specify formating text properties.</span>
+					</p>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Argument
+											name</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Details</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Type</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Expected
+											value</span>
+									</p>
+								</div></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font
+											color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value (e.g. "#000000" or "black")</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">font.size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font
+											size in px</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">an
+											integer value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">font.weight</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font
+											weight</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font-weight</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">"normal"
+											or "bold"</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">font.style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font
+											style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font-style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">"normal"
+											or "italic"</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">underlined</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font
+											decoration</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font-decoration</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											logical value (TRUE or FALSE)</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">font.family</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font
+											family name (Arial, Times, etc.)</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font-family</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value : must be an available font name, e.g. Arial,
+											Times, etc.</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">vertical.align</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font
+											vertical alignment</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">font-family</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value : must be 'baseline', 'subscript' or
+											'superscript'</span>
+									</p>
+								</div></td>
+						</tr>
+					</tbody>
+					<tfoot></tfoot>
+				</table>
+				<h2 id="UIDVBayvF96fx">Paragraph formatting properties</h2>
+				<div>
+					<p>
+						<span>Use function <span class="functioncall">parProperties</span>
+							to specify formating text properties.</span>
+					</p>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Argument
+											name</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Details</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Type</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Expected
+											value</span>
+									</p>
+								</div></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">text.align</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">text
+											alignment</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">text-align</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value : "left" or "right" or "center" or "justify"</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">padding.bottom</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">space
+											after paragraph in px</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">an
+											integer value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">padding.top</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">space
+											before paragraph in px</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">an
+											integer value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">padding.left</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">space
+											on the left of paragraph in px</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">an
+											integer value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">padding.right</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">space
+											on the right of paragraph in px</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">an
+											integer value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+					</tbody>
+					<tfoot></tfoot>
+				</table>
+				<h2 id="UIDxp8HhkXqYH">Cell formatting properties</h2>
+				<div>
+					<p>
+						<span>Use function <span class="functioncall">cellProperties</span>
+							to specify formating text properties.</span>
+					</p>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Argument
+											name</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Details</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Type</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #84978F; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: left; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; font-weight: bold; color: #000000;">Expected
+											value</span>
+									</p>
+								</div></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.bottom.color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											bottom color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value (e.g. "#000000" or "black")</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.bottom.style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											bottom style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border-style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value : "single" or "none" or "hidden" or "double" or
+											"dotted" or "dashed" or "inset" or "outset"</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.bottom.width</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											bottom width</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">an
+											integer value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.left.color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											left color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value (e.g. "#000000" or "black")</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.left.style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											left style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border-style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value : "single" or "none" or "hidden" or "double" or
+											"dotted" or "dashed" or "inset" or "outset"</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.left.width</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											left width</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">an
+											integer value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.top.color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											top color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value (e.g. "#000000" or "black")</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.top.style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											top style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border-style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value : "single" or "none" or "hidden" or "double" or
+											"dotted" or "dashed" or "inset" or "outset"</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.top.width</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											top width</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">an
+											integer value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.right.color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											right color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">color</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value (e.g. "#000000" or "black")</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.right.style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											right style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border-style</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value : "single" or "none" or "hidden" or "double" or
+											"dotted" or "dashed" or "inset" or "outset"</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">border.right.width</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">border
+											right width</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">integer
+											value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">vertical.align</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">cell
+											content vertical alignment</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">vertical-align</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">a
+											string value : "center" or "top" or "bottom"</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">padding.bottom</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">cell
+											bottom padding</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">integer
+											value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">padding.top</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">cell
+											top padding</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">integer
+											value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">padding.left</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">cell
+											left padding</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">integer
+											value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+						<tr>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Courier New; font-weight: bold; color: #000000;">padding.right</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">cell
+											right padding</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">size</span>
+									</p>
+								</div></td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; vertical-align: middle; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;"><div>
+									<p
+										style="text-align: right; margin-top: 1px; margin-bottom: 1px; margin-right: 1px; margin-left: 1px;">
+										<span
+											style="font-size: 11px; font-family: Helvetica; color: #333333;">integer
+											value : 0>= value</span>
+									</p>
+								</div></td>
+						</tr>
+					</tbody>
+					<tfoot></tfoot>
+				</table>
+
+				<h2 id="UIDcIOyzdIB01">External images</h2>
+
+<div><p><span>Insert external images into the output document.</span></p></div><ul><li><span><code>docx</code> and <code>pptx</code> can receive PNG, WMF, JPEG and GIF images. Image size can be modified.</span></li><li><span><code>html</code> can receive PNG, JPEG and GIF images. Image size cannot be modified.</span></li></ul><div><pre><span class="symbol">img.file</span> <span class="assignement">=</span> <span class="functioncall">file.path</span><span class="keyword">(</span> <span class="functioncall">Sys.getenv</span><span class="keyword">(</span><span class="string">"R_HOME"</span><span class="keyword">)</span><span class="keyword">,</span> <span class="string">"doc"</span><span class="keyword">,</span> <span class="string">"html"</span><span class="keyword">,</span> <span class="string">"logo.jpg"</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">&lt;-</span> <span class="functioncall">addImage</span><span class="keyword">(</span><span class="symbol">doc</span><span class="keyword">,</span> <span class="symbol">img.file</span><span class="keyword">)</span></pre></div><div><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQEBKwErAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD/2wBDAAUDBAQE
+AwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIe
+JBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABMAGQDASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAA
+AAAAAAAABwgABQYEAwEC/8QARxAAAQMDAQQFBgkKBQUAAAAAAQIDBAUGEQAHEiExE0FRYXEI
+FDJCgbEXIjZSkZShtNIVJDM3VXJzdILBFiNiktNEVld1ov/EABkBAAIDAQAAAAAAAAAAAAAA
+AAECAAMEBf/EACERAAICAQQDAQEAAAAAAAAAAAABAgMRBBIhMRNBgcHw/9oADAMBAAIRAxEA
+PwBy9TU0OL5v91EpdFtgB+XkpckgbyUHrCRyJ7+Q7+qENlcNxUagM9JVJzbBIylv0nF+CRxP
+jy0Oa3tekLUpug0cY6npZzn+hP4tCys1hs1Fxppblbqi1YcWFlTaVd6+az3Dh3674tqVmSwJ
+VwVAU+ORkMIG6cfuj++kyLksqnfd5TlFLteMYH1I4S3j2gb326pX5tdlHL9eqTxPWuW4f76p
+7huqybZSpmOUSX08ypW8c+A4araZUb/uwBdr2bVpMdfoPhjomT4OKwn7dAho1JqyV7zdVmpP
+URJWP76949bvOCQYlyVUY5JVJU4n6FEjXHF2U7Z54C36fTYOfVkVFKiP9m9rrGxXawhO8X7f
+cPYma4D9rephk5LymbXL5pagmoIh1Vsc+lZ6NZHcpGB9IOt/au2m1qq4iNVku0OUrh+cneZJ
+7nBy8VBOgzM2d7W6akqXb5ltjmYsxtz/AOSoKP0ay9TelQnvNLio0unPK9WRHU0o+AUBn2aO
+WiZY7LLrbzSHWXEONrAUlaDkKB5EEc9frShWRfNw2S8l+iyvP6UVZep7yjuY6yn5iu8cO0HT
+NbP7yot7UNNTo7xykhMiOvg4wv5qh7jyOmTyFM0epqamiEwm1a4pERlm36UpXn84YWUekhsn
+GB3qPDwB7tA6uy351UNmWwSvCuiqEtrm8vraQepA5E+sc9WtHfdxOMTrouNC/wA4ZCo8I/NU
+pQaQR3hOVeI12eTzb7EGjv119AU4hOGye08zpHyxez2TTbe2X22qfPU0qclGVuEZ3D81A7dC
+ujp2gbda6/HoCzSbcYc3JNRdB3E/6RjBcXj1RgDhkjIz57R1VTattrp9g0+S4zFU+pL7qePR
+NIG8652ZwCBnrwOvTe2vQaVbNvw6DRIbcOnw2w2y0gch1knrJOSSeJJJOilkIMKPsksfZha0
+uuxKQ1W6zEZ6Tz6qJDyirhxSn0Uf0gHtJ1W1XbPUaVL80n1Cz4r24lfRvSFIUEqSFJJBXkZB
+GidtS/V7Wv5Y+8aW11ttd5VnfQlWGYXMZ/6ZGuhpaozjyvZRbJxfBuvh4c/bVkfWz+PU+Hhz
+9tWR9bP49YO56/blpUZqbUqe7PlynQ3HjMjAHHGTgZJJ4ADVR/jlr/xlWfqr/wCHV8qqovDx
+/fRFKb5QU/h4c/bVkfWz+PXUxtijVSGtmuW/Sa7Sz+mXT5CJCAO9Csg+0jQmiXfTJkpEWXas
+ujOOfoxIbWje/wB412uUikVA+ctRhHktqKQ8yOidbUOYyPdorT1zXGAOyUewiTNmdpXjSl3B
+szqSIjwPx4a1Hot7rQQfjNK+kdgxx0L6dU7g2Y3n+WW4j0d+MoN1Wnq4B5knj3d6SOAOCOGd
+e9l3JUNn+0ukzXXsQp8hEKoBPBDra1bqXCOQKSc8Ow9RxphttNmRrmtx6a0wk1KE0pTagOLr
+Y4qbPaCMkd/idcy+nxywjRB7lk2VEqcKtUeHVqc8HocxlLzKx6yVDI8D3amgF5Pu0KBa9ly7
+arTq1Gm1N5uJx49ApKHE/a4rU1WmWGQ2jpdZi1eCvIUzUP8AMH7rhH99FjZVIbXs1cS2RvIV
+8bHhrO+UBbxp9xKqYbPmFWThZA4IeAwR7QArx3uzVNsfuAUqQ9Rpy8MPjc3jyB6jpemL7Kvy
+YY6GvKOuQyx+cilPhre/mGt7Hfy+3TX6VG7Gptg7U6ff9NYU8y05uzmkeu0obq/pByP9QGmh
+oVVp9cpEWrUqSiTDlNhxpxB4EH3EciDxBBGjEKKfal+r2tfyx940uCvljWv4ML7sjTH7Uv1e
+1r+WPvGlwV8sa1/Bhfdka6mh6+/hmv7MvtJ+UFn/APtov3gadzScXTAMmZBmOQJE9uKtK0oj
+upQ62tKt5Kk7xAPHvHVq5F+3GBjor/8ArjP/ADaOo07nPJK7FGOA/bY4dPm7Pqi3PabcISkx
+94DeD2RulPfns6s6XoI83u6tw08mBFS4ByDpjoKh48Rnv13RroumplSolHnrfYSV/lC5aijz
+WEPn9GhSis92RnVGiuWJZtMdkVu6vyzMccXJkmOMrlPKOVKUs4AyeoDlwGnoj4lhsWx7+ig2
+1tr8yoMRjPnk+Y02wBzJLm6nHtOniOMHOMdedKdsPtO4Nq206DtPuKmOUy1aOoO0aM4gp86d
+T+jUlJ49Gj0t7rUBjPHB42z3pEtG0pKipTk+Sjoo7DXFxZUd0BI61EkJSOtRHYdYdTarJ5Ro
+qjtjyLjAsSq3XW6/OorTi4rFREfKOW8I7KvcoammW2N2u/aVgw6fP3DVJClzaiUnI84dO8tI
+PWE5CB3IGprMkPgvrnodPuOiSKRUmt9h5PMcFIV1KSeog6Vu+Laq9kVoRaogrjKUfNJqE/Ee
+T2dyu1PvHHTb646zS6dWac7TqrDZmRHRhbTqcg9/cewjiNRrJGhaabX2alThAqBS6nd3UrPE
+gdh7Rr5adcrmzuouO0Qpl0h9e+/TnFnoyfnNq9RX2HrB4Y0V77C6nCccm2RPD7Wd7zCWvdWn
+uQ5yPgrHidDKo1KvW1I8yuSkTICycASGiEq/dVyV4gnScoAea7tHti6tn1WYiyzEqCoxzClf
+EdzkcE9S/wCkn2aECvljWv4ML7sjVG1VqRPUOjAS8fRA7dXivljWv4ML7sjXV0DzH7+Ga/s4
+b5uyrW3TqdBtyLGVU6nKQyHngMjeWEJSCfRGTxOreo27tzpEJyo16mwJsBgb7yYj6HVpSOat
+3AJA7s6wu2CQuJKtqU2UBbM9hxO/6OQ8CM93DRjkba622gh6bbTfaUoWT9rmhqr5V2cMauEX
+HkGFzylVe3FU9an0RpQDi1R0kqUgde6OJKTzA7cjXvswTs0tR5qfNsykXC1HI356luPyWD85
+TT6iAf6Ua54tTi1CoSkU19h5xDxkx0sp3UpUeKmgOoEZAHcns1ZVKBEqsETY7LSn1N7zbm7x
+UDzST2HlrRsjfHJXucHgM987cbVolDbl0qQmYX0DzdW4QlRI4JSj0lq4gYA9uuDZTZFwXBcb
+W0XaK041KQekpFJe4qjEjAfeHLpcHCUcmwfnchx5MEa1YW0x+LWKY07Vnmt+iy5GVdDu5K20
+pPBK+ZyBngoZ01+uTODhLDNcXuWSampqaUYmpqamoQmvKXGjS4648uO1IZWMKbdQFJV4g8Dr
+11NQgLNpezSxY1t1GuQ7ahw6hFaLrLkXeZCVZ57iCEn2jQoZp8x+66y82z/lluGApSgkEiMj
+OMnjpi9osdMqx6xHUtaAuKobyMZHeMgjSfy7MQ9JccduOvrWpRyS+3+DWzTWquPXsosr3Mm2
+alKkT7Yp0wLbal1BhlSm1DOFPAHB4jOD7tMFTvJz2YxlBUqDUqljqkz3APobKdL/AEixoRuS
+iqerFYkBFRjuBLrrZGUuJI9Tu07uqtTNWS3D1x2rALr32T20zZUlq0LfgUypRSJLC4zIS46p
+GfiKV6SsjIGTzxoM26l2VIU3GbHQvpL6MkJDa8gOIyeA4kEDsV3abfSt7YdntMev6oqj1Srw
+WlLDvQRnW0tpUsBSiAUE8z26t01/jWGLbXuM3d1vViDJarVLSpqTGcEll1laVKZdSc5wCeBx
+4ZHfpntlV4xb5sqHXGQluQR0UxkH9C+n00+HIjuI0qvwbwf+4ri+sNf8eiz5NFBTbdwVKNFq
+lRksS44W63JWhSd9KgAobqRxwSO/2DQvnGzlIlcXHgPepqamshcf/9k="></div>
+			</div>
+		</div>
+	</div>
+	<div class="bs-docs-nav">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">ReporteRs</a>
+				<button class="navbar-toggle" data-toggle="collapse">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span
+						class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="gettingstarted.html">Getting Started</a></li>
+						<li class="active"><a href="miscellaneous.html">Miscellaneous</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">Documents<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="word.html">Word documents</a></li>
+								<li><a href="powerpoint.html">PowerPoint documents</a></li>
+								<li><a href="web.html">HTML documents</a></li>
+							</ul></li>
+
+						<li class="dropdown"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown">Main functions
+								<b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="addTable.html">addTable</a></li>
+								<li><a href="addPlot.html">addPlot</a></li>
+								<li><a href="addParagraph.html">addParagraph</a></li>
+								<li><a href="FlexTable.html">FlexTable</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+
+    <p>Maintained by David Gohel.</p>
+    <p>Code licensed under <a href="https://gnu.org/licenses/gpl.html" target="_blank">GPL-3</a>.</p>
+    <ul class="bs-docs-footer-links muted">
+      <li>Currently v0.2</li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs">GitHub</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/issues">Issues</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+	<script type="text/javascript">
+var $window = $(window)
+var $body   = $(document.body)
+var navHeight = $('.navbar').outerHeight(true) + 10
+$body.scrollspy({
+	target: '.bs-sidebar',
+	offset: navHeight
+})
+$window.on('load', function () {
+	$body.scrollspy('refresh')
+})
+$('.bs-docs-container [href=#]').click(function (e) {
+	e.preventDefault()
+})
+setTimeout(function () {
+	var $sideBar = $('.bs-sidebar')
+$sideBar.affix({
+	offset: {
+	top: function () {
+		var offsetTop	  = $sideBar.offset().top
+		var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+		var navOuterHeight = $('.bs-docs-nav').height()
+		return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+		}	, bottom: function () {
+		return (this.bottom = $('.bs-footer').outerHeight(true))
+		}
+	}
+	})
+}, 100)
+setTimeout(function () {
+	$('.bs-top').affix()
+}, 100)
+</script>
+</body>
+</html>

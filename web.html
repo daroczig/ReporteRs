@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>HTML documents</title>
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/html4r.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/highlight.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/raphael-min.js"></script>
+</head>
+<body>
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-3" id="navbar-div">
+				<div class="navbar-fixed-topleft nav nav-list bs-sidebar"
+					role="navigation">
+					<ul class="nav nav-list">
+						<li><a href="#UIDOwcKHGbMTH">Getting Started</a></li>
+						<li><a href="#UIDFv2bURm1OH">Page Layouts</a></li>
+						<li><a href="#UIDRNYadsSSJL">Available content elements</a>
+						<ul class="nav nav-list">
+								<li><a href="#UIDC2Y4wj9tMq">Titles</a></li>
+								<li><a href="#UIDE5C7kNR7u7">Contents</a></li>
+								<li><a href="#UIDE5C7kNR7u8">R scripts</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9" data-spy="scroll" data-target="#navbar-div">
+				<h1 id="UIDOwcKHGbMTH">Getting Started</h1>
+				<div>
+					<p>
+						<span>To create a WEB presentation, you have to first
+							create an html object and then to <b>add a page</b> before to be able
+							to send R outputs into that document (into that page...). Finally, 
+							write the object (into a directory).</span>
+					</p>
+					<p>
+						<i>Below a commented R script:</i>
+					</p>
+				</div>
+<div><pre><span class="symbol">html.directory</span> <span class="assignement">&lt;-</span> <span class="string">"HTML"</span>
+
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">html</span><span class="keyword">(</span> <span class="argument">title</span> <span class="argument">=</span> <span class="string">"My document"</span> <span class="keyword">)</span>
+
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addPage</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="string">"Demo"</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTitle</span><span class="keyword">(</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="string">"First 5 lines of iris"</span><span class="keyword">,</span> <span class="argument">level</span> <span class="argument">=</span> <span class="number">1</span><span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTable</span><span class="keyword">(</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="symbol">iris</span><span class="keyword">[</span><span class="number">1</span><span class="keyword">:</span><span class="number">5</span><span class="keyword">,</span> <span class="keyword">]</span><span class="keyword">)</span>
+
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTitle</span><span class="keyword">(</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="string">"ggplot2 example"</span><span class="keyword">,</span> <span class="argument">level</span> <span class="argument">=</span> <span class="number">1</span><span class="keyword">)</span>
+<span class="symbol">myggplot</span> <span class="assignement">=</span> <span class="functioncall">qplot</span><span class="keyword">(</span><span class="symbol">Sepal.Length</span><span class="keyword">,</span> <span class="symbol">Petal.Length</span><span class="keyword">,</span> <span class="argument">data</span> <span class="argument">=</span> <span class="symbol">iris</span><span class="keyword">,</span> <span class="argument">color</span> <span class="argument">=</span> <span class="symbol">Species</span><span class="keyword">,</span> <span class="argument">size</span> <span class="argument">=</span> <span class="symbol">Petal.Width</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addPlot</span><span class="keyword">(</span> <span class="argument">doc</span> <span class="argument">=</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="argument">fun</span> <span class="argument">=</span> <span class="symbol">print</span><span class="keyword">,</span> <span class="argument">x</span> <span class="argument">=</span> <span class="symbol">myggplot</span> <span class="keyword">)</span>
+
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTitle</span><span class="keyword">(</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="string">"Text example"</span><span class="keyword">,</span> <span class="argument">level</span> <span class="argument">=</span> <span class="number">1</span><span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addParagraph</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="string">"My tailor is rich."</span><span class="keyword">,</span> <span class="argument">stylename</span> <span class="argument">=</span> <span class="string">"text-primary"</span> <span class="keyword">)</span>
+
+<span class="symbol">xx</span> <span class="assignement">=</span> <span class="functioncall">writeDoc</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="symbol">html.directory</span> <span class="keyword">)</span>
+<span class="functioncall">browseURL</span><span class="keyword">(</span> <span class="symbol">xx</span> <span class="keyword">)</span></pre></div>
+				<div>
+					<p>
+						<span><code>html</code> objects are created with function <code>html</code>, there is no template argument yet.</span>
+					</p>
+				</div>
+				<h1 id="UIDFv2bURm1OH">Page Layouts</h1>
+				<p>The layout is the same than the one used with the page you are reading (generated with ReporteRs).</p>
+				<ul>
+					<li>
+						<span>pages links will be displayed in the top menu bar</span>
+					</li>
+					<li>
+						<span>pages TOC will automatically be displayed in the left part of web pages.</span>
+					</li>
+					<li>
+						<span>Content will be displayed on the right of the TOC.
+					</li>
+				</ul>
+
+				
+
+
+				<h1 id="UIDRNYadsSSJL">Available content elements</h1>
+				<h2 id="UIDC2Y4wj9tMq">Titles</h2>
+				<div>
+					<p>
+						<span>Function <span class="functioncall">addTitle</span> add a
+							title in the current slide.</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="comment"># Create a new document</span>
+<span class="symbol">html_doc</span> <span class="assignement">=</span> <span
+							class="functioncall">html</span><span class="keyword">(</span> <span
+							class="argument">title</span> <span class="argument">=</span> <span
+							class="string">"title"</span> <span class="keyword">)</span>
+
+<span class="comment"># add a page with title "My page title"</span>
+<span class="symbol">html_doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addSlide</span><span class="keyword">(</span> <span
+							class="symbol">html_doc</span><span class="keyword">,</span> <span
+							class="argument">title</span> <span class="argument">=</span> <span
+							class="string">"My page title"</span> <span class="keyword">)</span>
+
+<span class="comment"># Here we add a first level title</span>
+<span class="symbol">html_doc</span> <span class="assignement">=</span> <span
+							class="functioncall">addTitle</span><span class="keyword">(</span> <span
+							class="symbol">html_doc</span><span class="keyword">,</span> <span
+							class="string">"My title"</span>, <span
+							class="argument">level</span> <span class="argument">=</span> <span
+							class="string">1</span><span class="keyword">)</span>
+
+<span class="comment"># Write the object in a directory</span>
+<span class="functioncall">writeDoc</span><span class="keyword">(</span> <span
+							class="symbol">html_doc</span><span class="keyword">,</span> <span
+							class="string">"html_doc"</span> <span class="keyword">)</span></pre>
+				</div>
+				<h2 id="UIDE5C7kNR7u7">Contents</h2>
+				<div>
+					<p>
+						<span>See functions <a href="addTable.html">addTable</a>, addFlexTable, <a href="addPlot.html">addPlot</a> and
+							<a href="addParagraph.html">addParagraph</a> for details.</span>
+					</p>
+				</div>
+
+				
+				<h2 id="UIDE5C7kNR7u8">R Script</h2>
+				<div>
+					<p>
+						<span>Use <code>addRScript</code> to add a script in a web document.</span>
+					</p>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	<div class="bs-docs-nav">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">ReporteRs</a>
+				<button class="navbar-toggle" data-toggle="collapse">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span
+						class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="gettingstarted.html">Getting Started</a></li>
+						<li><a href="miscellaneous.html">Miscellaneous</a></li>
+
+						<li class="dropdown active"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">Documents<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="word.html">Word documents</a></li>
+								<li><a href="powerpoint.html">PowerPoint documents</a></li>
+								<li class="active"><a href="web.html">HTML documents</a></li>
+							</ul></li>
+
+						<li class="dropdown"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown">Main functions
+								<b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="addTable.html">addTable</a></li>
+								<li><a href="addPlot.html">addPlot</a></li>
+								<li><a href="addParagraph.html">addParagraph</a></li>
+								<li><a href="FlexTable.html">FlexTable</a></li>
+							</ul></li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+
+    <p>Maintained by David Gohel.</p>
+    <p>Code licensed under <a href="https://gnu.org/licenses/gpl.html" target="_blank">GPL-3</a>.</p>
+    <ul class="bs-docs-footer-links muted">
+      <li>Currently v0.2</li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs">GitHub</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/issues">Issues</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+	<script type="text/javascript">
+
+		var $window = $(window)
+		var $body   = $(document.body)
+		var navHeight = $('.navbar').outerHeight(true) + 10
+		$body.scrollspy({
+			target: '.bs-sidebar',
+			offset: navHeight
+		})
+		$window.on('load', function () {
+			$body.scrollspy('refresh')
+		})
+		$('.bs-docs-container [href=#]').click(function (e) {
+			e.preventDefault()
+		})
+		setTimeout(function () {
+			var $sideBar = $('.bs-sidebar')
+		$sideBar.affix({
+			offset: {
+			top: function () {
+				var offsetTop	  = $sideBar.offset().top
+				var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+				var navOuterHeight = $('.bs-docs-nav').height()
+				return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+				}	, bottom: function () {
+				return (this.bottom = $('.bs-footer').outerHeight(true))
+				}
+			}
+			})
+		}, 100)
+		setTimeout(function () {
+			$('.bs-top').affix()
+		}, 100)
+	</script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Getting started</title>
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"
+	media="all" />
+<link rel="stylesheet" href="css/html4r.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/highlight.css" type="text/css"
+	media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-3" id="navbar-div">
+				<div class="navbar-fixed-topleft nav nav-list bs-sidebar"
+					role="navigation">
+					<ul class="nav nav-list">
+						<li><a href="#UIDemJPw1ajim">Introduction</a></li>
+						<li><a href="#UIDS1jqL586Yz">Installation</a>
+						<ul class="nav nav-list">
+								<li><a href="#UIDd94rugqpwD">Dependencies</a></li>
+								<li><a href="#UIDXAQMINDj7Y">Install from Github</a></li>
+							</ul></li>
+						<li>
+							<a href="#UIDgRXTyTJqCR">How to start</a>
+							<ul class="nav nav-list"><li><a href="#UIDtkvDyiBseE">Main functions list</a></li></ul>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9" data-spy="scroll" data-target="#navbar-div">
+
+				<h1 id="UIDemJPw1ajim">Introduction</h1>
+				<div class="lead">
+					<b>ReporteRs</b> is an R package for creating Microsoft (Word docx and Powerpoint pptx) and html documents.
+				</div>
+				<p>
+					The package is the evolution of <b>R2DOCX</b>. 
+					There are several features to let you format and present R outputs, for example:
+				</p>
+				<ul>
+					<li><b>Editable Vector Graphics</b>: let your readers modify and annotate plots.</li>
+					<li><b>Tables</b>: the <span class="functioncall">addTable</span> function and <code>FlexTable</code> objects that let you format any complex table.</li>
+					<li><b>Text</b> output: format texts and paragraphs.</li>
+					<li>Reuse of corporate <b>template</b> document (*.docx and *.pptx).</li>
+				</ul>
+				<p class="bg-primary">You can use the package as a tool for fast reporting and as a tool for reporting automation.</p>
+				<h3>
+					Produce a document in few lines of codes
+				</h3>
+				
+				<p>There are default templates and default values, it enables easy generation of R outputs in few lines of codes.</p>
+				<p><i>Below a short R script that produces a Word document.</i></p>
+				
+				<pre><span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">docx</span><span class="keyword">(</span> <span class="argument">title</span> <span class="argument">=</span> <span class="string">"My document"</span> <span class="keyword">)</span>
+
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTitle</span><span class="keyword">(</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="string">"First 5 lines of iris"</span><span class="keyword">,</span> <span class="argument">level</span> <span class="argument">=</span> <span class="number">1</span><span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTable</span><span class="keyword">(</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="symbol">iris</span><span class="keyword">[</span><span class="number">1</span><span class="keyword">:</span><span class="number">5</span><span class="keyword">,</span> <span class="keyword">]</span><span class="keyword">)</span>
+
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTitle</span><span class="keyword">(</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="string">"ggplot2 example"</span><span class="keyword">,</span> <span class="argument">level</span> <span class="argument">=</span> <span class="number">1</span><span class="keyword">)</span>
+<span class="symbol">myggplot</span> <span class="assignement">=</span> <span class="functioncall">qplot</span><span class="keyword">(</span><span class="symbol">Sepal.Length</span><span class="keyword">,</span> <span class="symbol">Petal.Length</span><span class="keyword">,</span> <span class="argument">data</span> <span class="argument">=</span> <span class="symbol">iris</span><span class="keyword">,</span> <span class="argument">color</span> <span class="argument">=</span> <span class="symbol">Species</span><span class="keyword">,</span> <span class="argument">size</span> <span class="argument">=</span> <span class="symbol">Petal.Width</span> <span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addPlot</span><span class="keyword">(</span> <span class="argument">doc</span> <span class="argument">=</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="argument">fun</span> <span class="argument">=</span> <span class="symbol">print</span><span class="keyword">,</span> <span class="argument">x</span> <span class="argument">=</span> <span class="symbol">myggplot</span> <span class="keyword">)</span>
+
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addTitle</span><span class="keyword">(</span> <span class="symbol">doc</span> <span class="keyword">,</span> <span class="string">"Text example"</span><span class="keyword">,</span> <span class="argument">level</span> <span class="argument">=</span> <span class="number">1</span><span class="keyword">)</span>
+<span class="symbol">doc</span> <span class="assignement">=</span> <span class="functioncall">addParagraph</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="string">"My tailor is rich."</span><span class="keyword">,</span> <span class="argument">stylename</span> <span class="argument">=</span> <span class="string">"Normal"</span> <span class="keyword">)</span>
+
+<span class="functioncall">writeDoc</span><span class="keyword">(</span> <span class="symbol">doc</span><span class="keyword">,</span> <span class="string">"my_first_doc.docx"</span> <span class="keyword">)</span>
+<span class="functioncall">browseURL</span><span class="keyword">(</span> <span class="string">"my_first_doc.docx"</span> <span class="keyword">)</span></pre>
+
+				<h3>
+					Reporting automation
+				</h3>
+				
+				<p>It lets you also create corporate documents, creation of complex tables, pretty graphical rendering with a set of R functions.</p>
+				<p>To automate document generation only R code is necessary.</p>
+				<p>With Word and PowerPoint document, you can add contents from R but also replace contents. By default, content is added at the end of the specified template document.
+				When generating Word document, bookmarks can be used to define locations of replacements in the document. 
+				When generating PowerPoint document, slide indexes can be used to define locations of slides to replace in the presentation.</p>
+				
+				<p class="text-danger">A minimum of knownledge of layouts in PowerPoint is required when automating pptx generations. Below recommended links:</p>
+				<ul>
+					<li><a href="http://office.microsoft.com/en-us/powerpoint-help/create-a-new-custom-layout-HA010079650.aspx">Create a new custom layout</a></li>
+					<li><a href="http://office.microsoft.com/en-us/powerpoint-help/change-a-placeholder-HA010064940.aspx">Change a placeholder</a></li>
+				</ul>
+				
+				<p class="text-danger">A minimum of knownledge about styles is required when automating docx generations. Below recommended links:</p>
+				<ul>
+					<li><a href="http://office.microsoft.com/en-us/word-help/style-basics-in-word-HA010230882.aspx">Style basics in Word</a></li>
+				</ul>
+				
+				<h1 id="UIDS1jqL586Yz">Installation</h1>
+				<h3 id="UIDd94rugqpwD">Dependencies</h3>
+				<div>
+					<p>
+						<span>ReporteRs needs java (&gt;= 1.6) ; make sure you have
+							an installed JRE.</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="functioncall">system</span><span class="keyword">(</span><span
+							class="string">"java -version"</span><span class="keyword">)</span>
+<span class="comment"># should return "java version '1.6.0'" or greater.</span></pre>
+				</div>
+				<div>
+					<p>
+						<span>ReporteRs needs also some R packages ; run the
+							following script to install them if needed.</span>
+					</p>
+				</div>
+				<div>
+					<pre><span class="keyword">if</span><span class="keyword">(</span> <span
+							class="keyword">!</span><span class="functioncall">require</span><span
+							class="keyword">(</span> <span class="symbol">rJava</span> <span
+							class="keyword">)</span> <span class="keyword">)</span> <span
+							class="functioncall">install.packages</span><span class="keyword">(</span><span
+							class="string">"rJava"</span><span class="keyword">)</span>
+<span class="keyword">if</span><span class="keyword">(</span> <span
+							class="keyword">!</span><span class="functioncall">require</span><span
+							class="keyword">(</span> <span class="symbol">ggplot2</span> <span
+							class="keyword">)</span> <span class="keyword">)</span> <span
+							class="functioncall">install.packages</span><span class="keyword">(</span><span
+							class="string">"ggplot2"</span><span class="keyword">)</span>
+<span class="keyword">if</span><span class="keyword">(</span> <span
+							class="keyword">!</span><span class="functioncall">require</span><span
+							class="keyword">(</span> <span class="symbol">base64</span> <span
+							class="keyword">)</span> <span class="keyword">)</span> <span
+							class="functioncall">install.packages</span><span class="keyword">(</span><span
+							class="string">"base64"</span><span class="keyword">)</span>
+<span class="keyword">if</span><span class="keyword">(</span> <span
+							class="keyword">!</span><span class="functioncall">require</span><span
+							class="keyword">(</span> <span class="symbol">highlight</span> <span
+							class="keyword">)</span> <span class="keyword">)</span> <span
+							class="functioncall">install.packages</span><span class="keyword">(</span><span
+							class="string">"highlight"</span><span class="keyword">)</span></pre>
+				</div>
+				<h2 id="UIDXAQMINDj7Y">Install from Github</h2>
+				<h3>Build from Github</h3>
+				<p class="text-warning">You will need a c++ compiler.</p>
+				<div>
+					<pre><span class="functioncall">require</span><span class="keyword">(</span><span
+							class="string">"devtools"</span><span class="keyword">)</span>
+<span class="functioncall">install_github</span><span class="keyword">(</span><span
+							class="string">'R2X'</span><span class="keyword">,</span> <span
+							class="string">'davidgohel'</span><span class="keyword">)</span></pre>
+				</div>
+				<h3>Get binary on Github</h3>
+				<p class="text-warning">No compiler needed but only for Windows</p>
+
+				<div>
+					The windows binary package is available here: <a href="https://github.com/davidgohel/ReporteRs/releases/tag/v0.2"><span class="glyphicon glyphicon-download"></span> ReporteRs_0.2.zip</a>
+				</div>
+				<h1 id="UIDgRXTyTJqCR">How to start</h1>
+				<div>
+					<p>
+						<span>Creating documents is easy and can be done in few
+							lines of R code.</span>
+					</p>
+				</div>
+				<ol>
+					<li><span>Get a document representation (empty or not -
+							see templates) as an R object.</span></li>
+					<li><span>Add content into that object.</span></li>
+					<li><span>Write the document into a file.</span></li>
+				</ol>
+				<div>
+					<p>
+						<span>To get an r document object:</span>
+					</p>
+				</div>
+				<ul>
+					<li><span><span class="functioncall">docx</span>: Create a
+							Microsoft Word document object</span></li>
+					<li><span><code>pptx</code>: Create a
+							Microsoft PowerPoint document object</span></li>
+					<li><span><code>html</code>: Create an HTML
+							document object</span></li>
+				</ul>
+				<h2 id="UIDtkvDyiBseE">Main functions list</h2>
+				<div>
+					<p>
+						<strong>All theses functions are documented in the package.</strong>
+					</p>
+				</div>
+				<div>
+					<p>
+						<span>The following functions can be used whatever the
+							output format is (docx, pptx, html).</span>
+					</p>
+				</div>
+				<ul>
+					<li><span><span class="functioncall">addTitle</span>: Add a
+							title</span></li>
+					<li><span><span class="functioncall">addTable</span>: Add a
+							table</span></li>
+					<li><span><span class="functioncall">addFlexTable</span>: Add a
+							FlexTable</span></li>
+					<li><span><span class="functioncall">addPlot</span>: Add plots</span></li>
+					<li><span><span class="functioncall">addImage</span>: Add
+							external images</span></li>
+					<li><span><span class="functioncall">addParagraph</span>: Add
+							paragraphs of text</span></li>
+					<li><span><span class="functioncall">writeDoc</span>: Write the
+							document into a file</span></li>
+				</ul>
+				<div>
+					<p>
+						<span>The following functions can only be used when the
+							output format is docx.</span>
+					</p>
+				</div>
+				<ul>
+					<li><span><span class="functioncall">styles</span>: Get
+							available styles</span></li>
+					<li><span><span class="functioncall">addTOC</span>: Add a table
+							of contents</span></li>
+					<li><span><code>addPageBreak</code> : Add a
+							page break</span></li>
+				</ul>
+				<div>
+					<p>
+						<span>The following functions can only be used when the
+							output format is pptx.</span>
+					</p>
+				</div>
+				<ul>
+					<li><span><span class="functioncall">slide.layouts</span>: Get
+							available layout names</span></li>
+					<li><span><span class="functioncall">addSlide</span>: Add a
+							slide</span></li>
+					<li><span><span class="functioncall">addDate</span>: Add a date</span></li>
+					<li><span><span class="functioncall">addPageNumber</span>: Add a
+							page number</span></li>
+					<li><span><span class="functioncall">addFooter</span>: Add a
+							comment in the footer</span></li>
+					<li><span><span class="functioncall">addSubtitle</span>: Add a
+							sub title</span></li>
+				</ul>
+				<div>
+					<p>
+						<span>The following functions can only be used when the
+							output format is html.</span>
+					</p>
+				</div>
+				<div class="text-danger">
+					<p>
+						<span>Note that html is experimental.</span>
+					</p>
+				</div>
+				<ul>
+					<li><span><code>addPage</code>: Add a page</span></li>
+					<li><span><code>addRScript</code>: Add R
+							code</span></li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	<div class="bs-docs-nav">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">ReporteRs</a>
+				<button class="navbar-toggle" data-toggle="collapse">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span
+						class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li class="active"><a href="gettingstarted.html">Getting Started</a></li>
+						<li><a href="miscellaneous.html">Miscellaneous</a></li>
+
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">Documents<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="word.html">Word documents</a></li>
+								<li><a href="powerpoint.html">PowerPoint documents</a></li>
+								<li><a href="web.html">HTML documents</a></li>
+							</ul></li>
+
+						<li class="dropdown"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown">Main functions
+								<b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="addTable.html">addTable</a></li>
+								<li><a href="addPlot.html">addPlot</a></li>
+								<li><a href="addParagraph.html">addParagraph</a></li>
+								<li><a href="FlexTable.html">FlexTable</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+
+    <p>Maintained by David Gohel.</p>
+    <p>Code licensed under <a href="https://gnu.org/licenses/gpl.html" target="_blank">GPL-3</a>.</p>
+    <ul class="bs-docs-footer-links muted">
+      <li>Currently v0.2</li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs">GitHub</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/issues">Issues</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/davidgohel/ReporteRs/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+
+	<script type="text/javascript">var $window = $(window)
+var $body   = $(document.body)
+var navHeight = $('.navbar').outerHeight(true) + 10
+$body.scrollspy({
+	target: '.bs-sidebar',
+	offset: navHeight
+})
+$window.on('load', function () {
+	$body.scrollspy('refresh')
+})
+$('.bs-docs-container [href=#]').click(function (e) {
+	e.preventDefault()
+})
+setTimeout(function () {
+	var $sideBar = $('.bs-sidebar')
+$sideBar.affix({
+	offset: {
+	top: function () {
+		var offsetTop	  = $sideBar.offset().top
+		var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+		var navOuterHeight = $('.bs-docs-nav').height()
+		return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+		}	, bottom: function () {
+		return (this.bottom = $('.bs-footer').outerHeight(true))
+		}
+	}
+	})
+}, 100)
+setTimeout(function () {
+	$('.bs-top').affix()
+}, 100)
+</script>
+</body>
+</html>
