@@ -455,10 +455,16 @@
 							paragraph containing the bookmark&lt;/b&gt;.</span>
 					</p>
 					<p>
-						<span>Behavior is different for tables, table is added
+						<span>Behavior is <strong>different for tables</strong>, table is added
 							<strong>AFTER</strong> the paragraph that contains the bookmark. See
 							<a href="#UIDjLp27TSSfk">Delete content</a> if iterations
 							over the same document are needed.</span>
+					</p>
+					<p class="text-danger">If a table contains a bookmark used to add a table 
+					(therefore creating a <strong>nested table</strong>), the table header 
+					won't be repeated if the cell is displayed on several pages. ReporteRs is
+					expecting a bookmark to be in a single paragraph to be used with <span class="functioncall">addTable</span>
+					or <span class="functioncall">addFlexTable</span>.
 					</p>
 				</div>
 				<div>
