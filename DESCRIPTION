@@ -16,7 +16,7 @@ Description: An R package for creating Microsoft Word document (>=2007),
 License: GPL-3
 Copyright: See file COPYRIGHTS.
 Depends:
-    R (>= 3.0),ReporteRsjars
+    ReporteRsjars
 Imports:
     rJava,base64,highlight
 Suggests:
